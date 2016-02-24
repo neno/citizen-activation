@@ -1,7 +1,6 @@
 // ### Database connection module using mongojs
 var mongojs          = require('mongojs')
-//  , connectionString = process.env.MONGO_CONN_STRING     // mandatory env var
-, connectionString = 'mongodb://heroku_w5067d4b:ck74amh8i46vrdk9h37f5fu2pv@ds055915.mongolab.com:55915/heroku_w5067d4b'     // mandatory env var
+, connectionString = process.env.MONGO_CONN_STRING     // mandatory env var
 , collections;
 
 // Enumerate all MongoDB collections to expose
@@ -14,6 +13,6 @@ collections = [
 ];
 
 module.exports = {
-    db        : mongojs.connect(connectionString, collections)
+    db        : mongojs.connect(connectionString, collections, {authMechanism: 'ScramSHA1'})
     , ObjectId  : mongojs.ObjectId    // a function that generates mongo object ID
 };
