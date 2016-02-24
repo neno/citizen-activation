@@ -1,0 +1,13 @@
+<!-- begin navigation-bar -->
+<header class="l-header">
+  <a class="link-back back-button" href="#"
+      ng-show="isBackButtonVisible"><span>Back</span></a>
+  <a class="link-home home-button" href="#"
+      ng-show="isHomeButtonVisible"><span class="is-visuallyhidden">Home</span></a>
+  <h1 class="page-title" ng-bind="headerTitle">Citizen Activation</h1>
+  <button class="link-refresh refresh-button"
+      ng-class="{ 'is-updating': isUpdating }"
+      ng-show="isRefreshButtonVisible"><span class="is-visuallyhidden">Refresh</span></button>
+</header>
+<!-- end navigation-bar -->
+<main id="container" class="container" ng-transclude></main>

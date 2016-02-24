@@ -1,0 +1,28 @@
+<div>
+  <figure class="rating l-clearfix">
+    <abbr title="Rating: {{ rating }} out of {{ maxRating }}">
+      <span class="is-visuallyhidden">{{ rating }}/{{ maxRating }}</span>
+      <i ng-class="icon.cssClass" ng-repeat="icon in ratingIcons">
+        <i ng-if="icon.fillStyle" class="rating-item-filler" style="{{ icon.fillStyle }}"></i>
+      </i>
+    </abbr>
+    <figcaption class="rating-figcaption">Citizens Participation Opportunity Level</figcaption>
+  </figure>
+  <ul class="rating-explanation">
+    <li class="rating-explanation-item">
+      Level 1 =  Freedoms of expression, assembly, media available (&quot;human rights&quot;)
+    </li>
+    <li class="rating-explanation-item">
+      Level  2 = Rights to elect and to be elected available (&quot;delegative rights&quot;)
+    </li>
+    <li class="rating-explanation-item">
+      Level  3 = Basic Participatory possibilities beyond elections as eg petition and agenda initiatives available (&quot;participatory rights&quot;)
+    </li>
+    <li class="rating-explanation-item">
+      Level 4 = Direct (binding) Democratic processes available like initiative and referendum (&quot;DD rights&quot;)
+    </li>
+    <li class="rating-explanation-item">
+      Level 5 = Citizen activation opportunities available linked to CA-APP (future feature)
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+<content>
+  <sidebar></sidebar>
+  <div class="l-content">
+    <title-bar></title-bar>
+    <p class="no-entries"
+        ng-if="!news.length">Currently there are no news available for this location</p>
+    <article class="toggle"
+        ng-repeat="newsItem in news"
+        ng-class="{ 'is-active': showContent, 'is-unread': newsItem.isUnread }">
+      <footer class="article-footer">
+        <ul class="article-meta-list">
+          <li><time ng-if="newsItem.date"
+                  datetime="{{ newsItem.date | amDateFormat: 'YYYY-MM' }}"
+                  ng-bind="newsItem.date | amDateFormat: 'MMMM YYYY'"></time></li>
+          <li ng-bind="newsItem.locationName"></li>
+          <li ng-bind="newsItem.author | authoredBy"></li>
+        </ul>
+      </footer>
+      <h1 class="h1 toggle-title">
+        <div class="day"><span ng-bind="newsItem.date | amDateFormat: 'DD'"></span></div>
+        {{ newsItem.title }}
+      </h1>
+      <div class="toggle-content" ng-if="showContent"
+          mark-item-read item="newsItem">
+        <figure class="article-thumb" ng-if="newsItem.image">
+          <img alt="news-image" src="{{ newsItem.image }}" />
+        </figure>
+        <p class="p" ng-bind-html="newsItem.content"></p>
+        <p class="p">
+          <a class="article-url t-c t-c-hover-shade is-ellipsis"
+              href="{{ newsItem.link }}"
+              ng-bind="newsItem.link | trimUrlPrefix"></a>
+        </p>
+      </div>
+    </article>
+  </div>
+</content>

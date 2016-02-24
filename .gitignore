@@ -1,0 +1,12 @@
+.DS_Store
+/.bundle
+/.sass-cache
+/vendor/bundle
+Gemfile.lock
+*.bak
+*.log
+build/
+node_modules/
+bower_components/
+server/public/
+karma_html/

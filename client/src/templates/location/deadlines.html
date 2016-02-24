@@ -1,0 +1,33 @@
+<content>
+  <sidebar></sidebar>
+  <div class="l-content">
+    <title-bar></title-bar>
+    <p class="no-entries"
+        ng-if="!deadlines.length">Currently there are no deadlines available for this location</p>
+    <article class="toggle"
+        ng-repeat="deadline in deadlines"
+        ng-class="{ 'is-active': showContent, 'is-unread': deadline.isUnread }">
+      <footer class="article-footer">
+        <ul class="article-meta-list">
+          <li><time ng-if="deadline.date"
+                  datetime="{{ deadline.date | amDateFormat: 'YYYY-MM' }}"
+                  ng-bind="deadline.date | amDateFormat: 'MMMM YYYY'"></time></li>
+          <li ng-bind="deadline.locationName"></li>
+        </ul>
+      </footer>
+      <h1 class="h1 toggle-title">
+        <div class="day"><span ng-bind="deadline.date | amDateFormat: 'DD'"></span></div>
+        {{ deadline.title }}
+      </h1>
+      <div class="toggle-content" ng-if="showContent"
+          mark-item-read item="deadline">
+        <p class="p" ng-bind-html="deadline.content"></p>
+        <p class="p" ng-if="deadline.link">
+          <a class="article-url t-c t-c-hover-shade is-ellipsis"
+              href="{{ deadline.link }}"
+              ng-bind="deadline.link | trimUrlPrefix"></a>
+        </p>
+      </div>
+    </article>
+  </div>
+</content>

@@ -1,0 +1,51 @@
+<content>
+  <add-location-overlay></add-location-overlay>
+  <update-info ng-if="locations.length"></update-info>
+  <div class="l-vertical-middle" ng-hide="locations.length">
+    <div class="l-narrowed is-text-center">
+      <p class="location-empty-hint">You have no locations added</p>
+      <add-location-button></add-location-button>
+    </div>
+  </div>
+  <div class="l-home-content" ng-show="locations.length">
+    <!-- begin deadline countdown -->
+    <a class="deadline-countdown {{ nextDeadlineLocation.theme || 'falun' }}" ui-sref="location({ id: nextDeadlineLocation._id })">
+      <div class="deadline-countdown-inner">
+        <strong class="deadline-count t-c" ng-bind-html="nextDeadlineLocation.nextDeadline | daysAhead"></strong>
+        <div class="deadline-info">
+          <p class="deadline-explanation">
+            Days to next deadline
+          </p>
+          <p ng-if="nextDeadlineLocation" class="deadline-location t-c">
+            {{ nextDeadlineLocation.name }} / {{ nextDeadlineLocation.level }}
+          </p>
+        </div>
+      </div>
+    </a>
+    <!-- end deadline countdown -->
+    <ul class="l-grid">
+      <li class="l-column l-one-whole l-tablet-landscape-one-half"
+          ng-repeat="location in locations">
+        <!-- begin location-small -->
+        <a class="location-small t-bg {{ location.theme }}" ui-sref="location({ id: location._id })">
+          <strong class="location-small-title">{{ location.name }}</strong>
+          <ul class="location-small-list">
+            <li class="location-small-list-item updates-desc l-clearfix">
+              <div class="item-counter t-c">{{ location.updatesCount }}</div>
+              Updates available
+            </li>
+            <li class="location-small-list-item count-desc l-clearfix">
+              <div class="item-counter t-c" ng-bind-html="location.nextDeadline | daysAhead"></div>
+              Days to next deadline
+            </li>
+          </ul>
+        </a>
+        <!-- end location-small -->
+      </li>
+      <li class="l-column l-one-whole l-tablet-landscape-one-half location-small-empty">
+        <add-location-button></add-location-button>
+      </li>
+    </ul>
+  </div>
+  <div class="ios-install" ng-if="isInstallable"></div>
+</content>

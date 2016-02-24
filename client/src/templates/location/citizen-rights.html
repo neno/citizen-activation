@@ -1,0 +1,22 @@
+<content>
+  <sidebar></sidebar>
+  <div class="l-content">
+    <title-bar></title-bar>
+    <p class="no-entries"
+        ng-if="!citizenRights.length">Currently there is no citizen rights data available for this location</p>
+    <main>
+      <ul class="link-list link-list-alt">
+        <li class="link-list-item" ng-repeat="cr in citizenRights">
+          <a class="arrow-link"
+              ui-sref="location.citizenRights.item({ id: location._id, citizenRightsId: cr._id })">
+            <article>
+              <h1 class="h1" ng-bind="cr.instrument"></h1>
+              <p class="p" ng-bind="cr.localName | localNameLabelled"></p>
+              <p class="p" ng-bind="cr.level | politicalLevelLabelled"></p>
+            </article>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </div>
+</content>

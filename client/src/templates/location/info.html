@@ -1,0 +1,17 @@
+<content>
+  <sidebar></sidebar>
+  <div class="l-content">
+    <title-bar></title-bar>
+    <tabbed-navbar></tabbed-navbar>
+    <article class="l-narrowed">
+      <h1 class="h1" ng-bind="contentLocation.name"></h1>
+      <!-- begin figure -->
+      <figure class="figure" ng-if="contentLocation.image">
+        <img alt="" ng-src="{{ contentLocation.image }}">
+        <figcaption class="figcaption t-bg" ng-if="contentLocation.imageCaption" ng-bind="contentLocation.imageCaption"></figcaption>
+      </figure>
+      <!-- end figure -->
+      <p class="p" ng-bind="contentLocation.info"></p>
+    </article>
+  </div>
+</content>

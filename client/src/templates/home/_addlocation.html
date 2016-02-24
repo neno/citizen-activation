@@ -1,0 +1,30 @@
+<div class="l-overlay">
+  <!-- begin frm-search -->
+  <form class="frm-search">
+    <fieldset class="frm-fieldset">
+      <legend class="is-visuallyhidden">Search form</legend>
+      <div class="frm-field frm-input frm-search-field">
+        <label for="search" class="is-visuallyhidden">Add a location</label>
+        <div class="frm-field-holder">
+          <div class="search-input-ico"></div>
+          <input name="search" id="search" placeholder="Add a location" class="frm-search-input" type="search"
+              ng-model="q" ng-change="search()" autofocus/>
+        </div>
+      </div>
+      <button class="frm-btn frm-input-reset" ng-click="reset()">
+        <span class="is-visuallyhidden">Reset</span>
+      </button>
+      <button class="frm-btn frm-cancel" ng-click="close()">Cancel</button>
+    </fieldset>
+  </form>
+  <!-- end frm-search -->
+  <!-- begin search result -->
+  <ul class="search-result">
+    <li ng-repeat="location in results">
+      <a class="search-result-link"
+          ui-sref="location({ id: location._id })"
+          ng-bind="location.name"></a>
+    </li>
+  </ul>
+  <!-- end search result -->
+</div>

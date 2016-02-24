@@ -1,0 +1,30 @@
+<div class="l-sidebar t-bg is-tablet-landscape-visible">
+  <aside class="location-header">
+    <location-header></location-header>
+  </aside>
+  <nav class="location-navigation">
+    <h1 class="is-visuallyhidden">Location menu</h1>
+    <ul class="link-list location-navigation-list">
+      <li class="link-list-item t-c-bg-shade t-bg">
+        <a class="arrow-link"
+           ng-class="{ true: 't-c-tint is-current', false: 't-c-hover-tint' }[isActive('deadlines')]"
+           ui-sref="location.deadlines({ id: location._id })">Participation Deadlines</a>
+      </li>
+      <li class="link-list-item t-c-bg-shade t-bg">
+        <a class="arrow-link"
+           ng-class="{ true: 't-c-tint is-current', false: 't-c-hover-tint' }[isActive('news')]"
+           ui-sref="location.news({ id: location._id })">Democracy News</a>
+      </li>
+      <li class="link-list-item t-c-bg-shade t-bg">
+        <a class="arrow-link"
+           ng-class="{ true: 't-c-tint is-current', false: 't-c-hover-tint' }[isActive('info')]"
+           ui-sref="location.info({ id: location._id })">Location Info</a>
+      </li>
+      <li class="link-list-item t-c-bg-shade t-bg">
+        <a class="arrow-link"
+           ng-class="{ true: 't-c-tint is-current', false: 't-c-hover-tint' }[isActive('citizen-rights')]"
+           ui-sref="location.citizenRights({ id: location._id })">Citizen rights</a>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,9 @@
+<ul class="tabs" ng-show="tabNavShown">
+  <li class="tab"
+      ng-repeat="location in locations">
+    <a class="tab-link" href="#"
+        ng-class="{ 'is-current': contentLocation._id === location._id }"
+        ng-click="selectTab($index)"
+        ng-bind="location.level | capitalizeFirstLetter"></a>
+  </li>
+</ul>

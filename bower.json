@@ -1,0 +1,24 @@
+{
+  "name": "CitizenActivationApp",
+  "version": "1.0.0",
+  "authors": [
+    "Tomislav Capan <tomislav.capan@gmail.com>"
+  ],
+  "description": "Citizen Activation App",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-sanitize": "~1.2.16",
+    "angular-ui-router": "~0.2.10",
+    "angular-ui-utils": "~0.1.1",
+    "angular-moment": "~0.7.0",
+    "angular-momentjs": "~0.1.8",
+    "lodash": "~2.4.1",
+    "moment": "~2.6.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.16"
+  }
+}

@@ -1,0 +1,52 @@
+<content>
+  <notification-dialog ng-if="'add' === overlay"></notification-dialog>
+  <confirmation-dialog ng-if="'remove' === overlay"></confirmation-dialog>
+  <div class="l-content">
+    <!-- begin location-header -->
+    <div class="location-header">
+      <location-header></location-header>
+    </div>
+    <!-- end location-header -->
+    <div class="l-narrowed is-text-center">
+      <button class="btn btn-save" save-location-button ng-hide="isUserLocation">Save location</button>
+      <button class="btn btn-dismiss" remove-location-button ng-show="isUserLocation">Remove location</button>
+    </div>
+    <!-- begin location navigation menu -->
+    <ul class="link-list location-navigation-list">
+      <li class="link-list-item">
+        <a class="arrow-link" ui-sref="location.deadlines({ id: location._id })">
+          <div class="arrow-link-figure arrow-link-figure-ico ico-deadline">
+            <abbr class="arrow-link-count" title="{{ deadlinesCount }} participation deadlines available">{{ deadlinesCount }}</abbr>
+          </div>
+          Participation Deadlines
+        </a>
+      </li>
+
+      <li class="link-list-item">
+        <a class="arrow-link" ui-sref="location.news({ id: location._id })">
+          <div class="arrow-link-figure arrow-link-figure-ico ico-news">
+            <abbr class="arrow-link-count" title="{{ newsCount }} democracy news available">{{ newsCount }}</abbr>
+          </div>
+          Democracy News
+        </a>
+      </li>
+
+      <li class="link-list-item">
+        <a class="arrow-link" ui-sref="location.info({ id: location._id })">
+          <div class="arrow-link-figure arrow-link-figure-ico ico-info">
+          </div>
+          Location Info
+        </a>
+      </li>
+
+      <li class="link-list-item">
+        <a class="arrow-link" ui-sref="location.citizenRights({ id: location._id })">
+          <div class="arrow-link-figure arrow-link-figure-ico ico-rights">
+          </div>
+          Citizen Rights
+        </a>
+      </li>
+    </ul>
+    <!-- end location navigation menu -->
+  </div>
+</content>
